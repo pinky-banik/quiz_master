@@ -6,10 +6,10 @@ const TopicCard = ({topic}) => {
   const {id,logo,name,total} = topic;
   const navigate=useNavigate();
   return (
-    <div className="p-5">
-      <div className="card card-compact z-0 bg-base-100 shadow-xl">
+    <div >
+      <div className="card card-compact z-0 bg-base-100 shadow-xl ">
         <figure>
-          <img src={logo} alt="logo" />
+          <img className="bg-gray-900" src={logo} alt="logo" />
         </figure>
         <div className="card-body">
           <h2 className="card-title text-primary">{name}</h2>
