@@ -19,7 +19,7 @@ const Home = () => {
     <div className=" flex justify-center items-center">
       <div className='w-4/5'>
       <Banner/>
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 py-5'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 py-5 pb-20'>
       {
         topics.map(topic=>
           <TopicCard key={topic.id} topic={topic}/>)

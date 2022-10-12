@@ -56,7 +56,7 @@ const QuizCard = ({ quiz, index}) => {
             </div>
             
           </div> */}
-          <BsFillEyeFill  onClick={showCorrectAnswer}  className='text-primary ml-5 cursor-pointer'/>
+          <BsFillEyeFill  onClick={showCorrectAnswer}  className='text-primary ml-5 cursor-pointer z-10'/>
         </div>
         {/* ----------eye modal closed----------- */}
 
