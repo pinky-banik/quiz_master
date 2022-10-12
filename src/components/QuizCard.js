@@ -20,6 +20,11 @@ const QuizCard = ({ quiz, index}) => {
     }
   }
 
+  const showCorrectAnswer = () =>
+  {
+    toast.info("Correct Answer : " + correctAnswer);
+  }
+
   return (
     <div className="card p-5 shadow-lg m-5 ">
       <div className="p-5 flex justify-between">
@@ -29,7 +34,7 @@ const QuizCard = ({ quiz, index}) => {
 
         {/* correct answer modal */}
         <div>
-          <label htmlFor="my-modal-3" className="cursor-pointer" >
+          {/* <label htmlFor="my-modal-3" className="cursor-pointer" >
           <BsFillEyeFill  className='text-primary ml-5'/>
           </label>
 
@@ -50,7 +55,8 @@ const QuizCard = ({ quiz, index}) => {
               </p>
             </div>
             
-          </div>
+          </div> */}
+          <BsFillEyeFill  onClick={showCorrectAnswer}  className='text-primary ml-5 cursor-pointer'/>
         </div>
         {/* ----------eye modal closed----------- */}
 
