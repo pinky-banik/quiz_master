@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import loader from '../assets/loading.gif';
+import QuizCard from '../components/QuizCard';
 
 const CatagoryQuizes = () => {
   const {id} = useParams();
@@ -27,12 +28,15 @@ const CatagoryQuizes = () => {
   }
 
   return (
-    <div className='text-5xl'>
-      {
-        catagoryQuizes.questions.map((quiz,index) =>
-          <h1 key={index} className='text-sm'>{quiz.question}</h1>
-          )
-      }
+    <div className='text-4xl w-3/4 mx-auto pt-20'>
+      <h1 className='text-center font-bold text-primary'>Quiz of {catagoryQuizes.name}</h1>
+      <div>
+        {
+          catagoryQuizes.questions.map((quiz,index)=>
+            <QuizCard key={quiz.id} quiz={quiz} index={index+1}/>
+            )
+        }
+      </div>
     </div>
   );
 };
