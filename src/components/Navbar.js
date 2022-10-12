@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
-  const [listItem, setListItem] = useState([]);
+  const [topics,setTopics] = useState([]);
 
   useEffect(() => {
     fetch("https://openapi.programming-hero.com/api/quiz")
       .then((res) => res.json())
       .then((data) => {
-        setListItem(data.data);
+        setTopics(data.data);
         console.log(data.data);
       });
   }, []);
@@ -53,8 +53,8 @@ const Navbar = () => {
                     <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                   </svg>
                 </a>
-                <ul className="p-2 bg-base-100 shadow-md">
-                  {listItem.map((list) => (
+                <ul className="p-2 bg-base-100 shadow-md z-10">
+                  {topics.map((list) => (
                     <li
                       key={list.id}
                       className="text-primary text-lg font-bold"
@@ -93,8 +93,8 @@ const Navbar = () => {
                   <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                 </svg>
               </a>
-              <ul className="p-2 bg-base-100 shadow-md">
-                {listItem.map((list) => (
+              <ul className="p-2 bg-base-100 shadow-md z-10">
+                {topics.map((list) => (
                   <li key={list.id} className="text-primary text-lg font-bold">
                     <Link to={`/catagory-quizes/${list.id}`}>{list.name}</Link>
                   </li>
