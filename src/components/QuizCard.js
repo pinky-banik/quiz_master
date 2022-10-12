@@ -1,9 +1,25 @@
 import React from "react";
 import { BsFillEyeFill } from "react-icons/bs";
+import { toast } from "react-toastify";
 
-const QuizCard = ({ quiz, index }) => {
+const QuizCard = ({ quiz, index}) => {
   const { id, options, question, correctAnswer } = quiz;
   console.log(options);
+
+
+
+
+
+  const checkAnswer = option =>{
+    if(option === correctAnswer)
+    {
+      toast.success("Correct Answer!!");
+      
+    }else{
+      toast.error("Wrong Answer!!");
+    }
+  }
+
   return (
     <div className="card p-5 shadow-lg m-5 ">
       <div className="p-5 flex justify-between">
@@ -13,7 +29,7 @@ const QuizCard = ({ quiz, index }) => {
 
         {/* correct answer modal */}
         <div>
-          <label htmlFor="my-modal-3" >
+          <label htmlFor="my-modal-3" className="cursor-pointer" >
           <BsFillEyeFill  className='text-primary ml-5'/>
           </label>
 
@@ -44,8 +60,8 @@ const QuizCard = ({ quiz, index }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 text-lg p-5 gap-5 ">
           {
               options.map((option,index)=>
-                <div key={index} className="border-primary p-3 rounded border-2 text-sm">
-                  <h1>{index+1}. {option}</h1>
+                <div key={index} className="border-primary rounded border-2 text-sm  cursor-pointer ">
+                  <button onClick={()=>checkAnswer(option)} type="radio" className="p-5 hover:bg-blue-100  focus:bg-blue-400 w-full h-full">{index+1}. {option}</button>
                 </div>
                 )
           }

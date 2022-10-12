@@ -27,13 +27,16 @@ const CatagoryQuizes = () => {
     </div>
   }
 
+
   return (
     <div className='text-4xl w-3/4 mx-auto pt-20'>
       <h1 className='text-center font-bold text-primary'>Quiz of {catagoryQuizes.name}</h1>
+
+      
       <div>
         {
           catagoryQuizes.questions.map((quiz,index)=>
-            <QuizCard key={quiz.id} quiz={quiz} index={index+1}/>
+            <QuizCard  key={quiz.id} quiz={quiz} index={index+1}/>
             )
         }
       </div>
