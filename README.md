@@ -12,3 +12,4 @@ Quiz Master is a quiz website. Here you find quizzes over any topic. There are d
 3. React toast to show different information.
 4. Chart made with rechart to show total quiz over any topic.
 5. Blogs page to show different blogs about react-router.
+6. anything
